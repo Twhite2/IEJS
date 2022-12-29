@@ -1,0 +1,150 @@
+@media screen and (max-width: 992px) {
+  /* apply styles for screens smaller than 992px */
+  .navbar .nav {
+    display: none;
+  }
+  .navbar .logo {
+    display: block;
+    text-align: center;
+  }
+  .navbar .logo img {
+    display: inline-block;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  /* apply styles for screens smaller than 768px */
+  .login-box {
+    width: 90%;
+    margin: 20px auto;
+  }
+}
+
+
+body {
+  margin: 0;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+.navbar {
+  background-color: #333;
+  color: #fff;
+  font-size: 18px;
+}
+
+.navbar .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+
+.navbar .logo {
+  display: flex;
+  align-items: center;
+}
+
+.navbar .logo img {
+  width: 50px;
+  margin-right: 15px;
+}
+
+.navbar .nav {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .nav li {
+  margin: 0 10px;
+}
+
+.navbar .nav li a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.navbar .nav li a:hover {
+  color: #ccc;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 80px);
+}
+
+.login-box {
+  width: 400px;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  padding: 40px;
+}
+
+.login-box h2 {
+  margin: 0 0 30px;
+  text-align: center;
+  font-size: 24px;
+}
+
+.input-box {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-box i {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  color: #333;
+}
+
+.input-box input {
+  width: 100%;
+  padding: 12px 45px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.eye {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  cursor: pointer;
+}
+
+a {
+  display: inline-block;
+  width: 100%;
+  padding: 12px 0;
+  font-size: 16px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  background-color: #333;
+  border: 1px solid #333;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+a:hover {
+  background-color: #ccc;
+  border-color: #ccc;
+}
+
+.main-footer {
+  background-color: #333;
+  color: #fff;
+  font-size: 18px;
+}
+
+.main-footer-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
