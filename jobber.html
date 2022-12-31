@@ -44,39 +44,30 @@
             <div class="item">
                 <form id="search-form">
                     <label>
-                      Search query:
+                      Job Search:
                       <input class="btn2" type="text" name="q" />
                     </label>
                     <label>
                       Page number:
                       <input class="btn3" type="number" name="pn" />
                     </label>
-                    <button class="btn4" type="submit">Search</button>
+                    <button class="btn4" type="submit" onclick="run()">Search</button>
                   </form>
 
+                <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+                  
                 <script>
-                     // Add an event listener to the search form submit event
-  $('#search-form').on('submit', function(e) {
-    // Prevent the form from submitting
-    e.preventDefault();
-
-    // Get the search query and page number from the form
-    const searchQuery = $(this).find('input[name="q"]').val();
-    const pageNumber = $(this).find('input[name="pn"]').val();
-
-    // Send an AJAX request to the /search endpoint
-    $.ajax({
-      url: '/search',
-      method: 'GET',
-      data: {
-        q: searchQuery,
-        pn: pageNumber
-      },
-      success: function(results) {
-        console.log(results); // log the results to the console
-      }
-    });
-  });
+                    $(document).ready(function () {
+                        $('#search-form').on('submit', async function(e){
+                            //Prevent the form from submitting
+                            e.preventDefault();
+                            fetch('http://localhost:5500/search')
+                            .then( response => response.json() )
+                            .then( data => {
+                                console.log(data)
+                            })
+                        });
+                    });
                 </script>
                    
             <!-- <div class="popup" id="popup">

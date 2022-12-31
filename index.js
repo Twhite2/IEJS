@@ -4,6 +4,11 @@ const puppeteer = require('puppeteer');
 
 const app = express();
 
+app.use((_req, res, next) => {
+  res.header('Access-Cintrol-Allow-Origin', '*');
+  res.header('Access-Cintrol-Allow-Headers', '*');
+});
+
 app.get('/search', async (req, res) => {
   const searchQuery = req.query.q; // get the search query from the request query string
   const pageNumber = req.query.pn; // get the page number from the request query string
@@ -24,7 +29,8 @@ async function run(searchQuery, pageNumber) {
   const page = await browser.newPage();
 
   // Use the search query and page number to generate the URL
-  const url = `https://www.simplyhired.com/search?q=${searchQuery}&sb=dd&pn=${pageNumber}&job`;
+ const url = `https://www.simplyhired.com/search?q=${searchQuery}&sb=dd&pn=${pageNumber}&job`;
+
 
   await page.goto(url, { waitUntil: 'networkidle2' });
 
@@ -42,5 +48,6 @@ async function run(searchQuery, pageNumber) {
 
   await browser.close();
 
+  // console.log(pageJobs)
   return pageJobs;
 }
